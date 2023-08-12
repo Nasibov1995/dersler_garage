@@ -1,0 +1,132 @@
+{% extends 'main/layout.html' %}
+{% block content %}
+{% load static %}
+
+
+<main>
+
+    <!-- job post company Start -->
+    <div class="job-post-company pt-120 pb-120">
+        <div class="container">
+            <div class="row justify-content-between">
+                {% for x in satish %}
+                <!-- Left Content -->
+                <div class="col-xl-7 col-lg-8">
+                    <!-- job single -->
+                    <div class="single-job-items mb-50">
+                        <div class="job-items">
+                            <div class="company-img company-img-details">
+                                <a href="#"><img src="assets/img/icon/job-list1.png" alt=""></a>
+                            </div>
+                            <div class="job-tittle">
+                                <a href="#">
+                                    <h4>{{ x.basliq }}</h4>
+                                </a>
+                                <ul>
+                                    <li>{{ x.sirket }}</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>{{ x.seher }}</li>
+                                    <li>{{ x.maas }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                      <!-- job single End -->
+                   
+                    <div class="job-post-details">
+                        <div class="post-details1 mb-50">
+                            <!-- Small Section Tittle -->
+                            <div class="small-section-tittle">
+                                <h4>Job Description</h4>
+                            </div>
+                            <p>{{ x.mezmun }}</p>
+                        </div>
+                        <div class="post-details2  mb-50">
+                             <!-- Small Section Tittle -->
+                            <div class="small-section-tittle">
+                                <h4>Required Knowledge, Skills, and Abilities</h4>
+                            </div>
+                           <ul>
+
+                               <li>{{ x.text1 }}</li>
+                               <li>{{ x.text2 }}</li>
+                               <li>{{ x.text3 }}</li>
+                               <li>{{ x.text4 }}</li>
+                               <li>{{ x.text5 }}</li>
+                            
+                               
+                           </ul>
+                        </div>
+                        <div class="post-details2  mb-50">
+                             <!-- Small Section Tittle -->
+                            <div class="small-section-tittle">
+                                <h4>Education + Experience</h4>
+                            </div>
+                           <ul>
+                            
+                               <li>{{ x.text_1 }}</li>
+                               <li>{{ x.text_2 }}</li>
+                               <li>{{ x.text_3 }}</li>
+                               <li>{{ x.text_4 }}</li>
+                               <li>{{ x.text_5 }}</li>
+
+                           </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Right Content -->
+                
+                <div class="col-xl-4 col-lg-4">
+                    <div class="post-details3  mb-50">
+                        <!-- Small Section Tittle -->
+                       <div class="small-section-tittle">
+                           <h4>Job Overview</h4>
+                       </div>
+                      <ul>
+                          <li> <span>{{ x.start }}</span></li>
+                          <li><span>{{ x.end }}</span></li>
+                          <li><span>Ünvan : {{ x.seher }}</span></li>
+                          <li> <span>{{ x.rejm }}</span></li>
+                          <li><span>Maaş : {{ x.maas }}</span></li>
+                          <li><span>{{ x.yash }}</span></li>
+                          <li><span>{{ x.tehsil }}</span></li>
+                          <li><span>{{ x.muqavile }}</span></li>
+                          <li> <span>{{ x.staj }}</span></li>
+
+
+                      </ul>
+                     <div class="apply-btn2">
+                        {% if x.apply_link == 0 %}
+                        <a href="{{ x.apply_link }}" class="btn">Apply Now</a>
+
+                        {% else %}
+
+
+                        {% endif %}
+                     </div>
+                   </div>
+                    <div class="post-details4  mb-50">
+                        <!-- Small Section Tittle -->
+                       <div class="small-section-tittle">
+                           <h4>Company Information</h4>
+                       </div>
+                          <span>{{ x.sirket }}</span>
+                          <p>{{ x.mezmun }}</p>
+                        <ul>
+                            <li>Name: <span>Colorlib </span></li>
+                            <li>Web : <span> colorlib.com</span></li>
+                            <li>Email: <span>{{ x.email }}</span></li>
+                        </ul>
+                   </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- job post company End -->
+
+</main>
+
+
+
+{% endblock %}

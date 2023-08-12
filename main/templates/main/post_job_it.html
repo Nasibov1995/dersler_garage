@@ -1,0 +1,66 @@
+{% extends 'main/layout.html' %}
+{% block content %}
+
+<form action="{% url 'post_job_it' %}" method="post">
+    {% csrf_token %}
+    <label for="">sirket</label>
+    <input type="text" name="sirket" class="form-control">
+    <br>
+    <label for="">maas</label>
+    <input type="text" name="maas" class="form-control">
+    <br>
+    <label for="">seher</label>
+    <input type="text" name="seher" class="form-control">
+    <br>
+    <label for="">mezmun</label>
+    <input type="text" name="mezmun" class="form-control">
+    <br>
+    <label for="">start</label>
+    <input type="text" name="start" class="form-control">
+    <br>
+    <label for="">end</label>
+    <input type="text" name="end" class="form-control">
+    <br>
+    <label for="">basliq</label>
+    <input type="text" name="basliq" class="form-control">
+    <br>
+    <label for="">email</label>
+    <input type="text" name="email" class="form-control">
+    <br>
+    <label for="">staj</label>
+    <input type="text" name="staj" class="form-control">
+    <br>
+    <label for="">yash</label>
+    <input type="text" name="yash" class="form-control">
+    <br>
+    <label for="">tehsil</label>
+    <input type="text" name="tehsil" class="form-control">
+    <br>
+    <label for="">rejm</label>
+    <input type="text" name="rejm" class="form-control">
+    <br>
+    <label for="">muqavile</label>
+    <input type="text" name="muqavile" class="form-control">
+    <br>
+    <label for="">apply_link</label>
+    <input type="text" name="apply_link" class="form-control">
+    <br>
+    <label for="">text1</label>
+    <input type="text" name="text1" class="form-control">
+    <br>
+    <label for="">text2</label>
+    <input type="text" name="text2" class="form-control">
+    <br>
+    <label for="">text3</label>
+    <input type="text" name="text3" class="form-control">
+    <br>
+    <label for="">text4</label>
+    <input type="text" name="text4" class="form-control">
+    <br><br>
+    <button type="submit">Daxil Et</button>
+
+
+
+</form>
+
+{% endblock %}

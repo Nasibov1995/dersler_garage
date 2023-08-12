@@ -1,0 +1,138 @@
+{% extends 'main/layout.html' %}
+{% block content %}
+
+
+
+<div class="our-services section-pad-t30">
+    <div class="container">
+        <!-- Section Tittle -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-tittle text-center">
+                    <span>FEATURED TOURS Packages</span>
+                    <h2>Browse Top Categories </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-contnet-center">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                <div class="single-services text-center mb-30">
+                    <a href="{% url 'satish' %}">
+                        <div class="services-ion">
+                            <span class="flaticon-tour"></span>
+                        </div>
+                    </a>   
+                    <div class="services-cap">
+                       <h5><a href="{% url 'satish' %}">Satış</a></h5>
+                        <span>({{ satish }})</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                <div class="single-services text-center mb-30">
+                    <a href="{% url 'post_job_it' %}">
+                        <div class="services-ion">
+                            <span class="flaticon-cms"></span>
+                        </div>
+                    </a>
+                    <div class="services-cap">
+                       <h5><a href="{% url 'post_job_it' %}">İnformasiya Texnologiyaları </a></h5>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                <div class="single-services text-center mb-30">
+                    <a href="{% url 'security' %}">
+                        <div class="services-ion">
+                            <span class="flaticon-report"></span>
+                        </div>
+                    </a>
+                    <div class="services-cap">
+                       <h5><a href="{% url 'security' %}">Təhlükəsizlik</a></h5>
+                        <span>({{ security }})</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                <div class="single-services text-center mb-30">
+                    <a href="{% url 'tibb' %}">
+                        <div class="services-ion">
+                            <span class="flaticon-app"></span>
+                        </div>
+                    </a>
+                    <div class="services-cap">
+                       <h5><a href="{% url 'tibb' %}">Tibb</a></h5>
+                        <span>({{ tibb }})</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                <div class="single-services text-center mb-30">
+                    <a href="{% url 'senaye' %}">
+                    <div class="services-ion">
+                        <span class="flaticon-helmet"></span>
+                    </div>
+                    </a>
+                    <div class="services-cap">
+                       <h5><a href="{% url 'senaye' %}">Sənaye & Tikinti</a></h5>
+                        <span>({{ senaye }})</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                <div class="single-services text-center mb-30">
+                    <a href="{% url 'neqliyyat'%}">
+                        <div class="services-ion">
+                            <span class="flaticon-high-tech"></span>
+                        </div>
+                    </a>
+                    <div class="services-cap">
+                       <h5><a href="{% url 'neqliyyat'%}">Nəqliyyat</a></h5>
+                        <span>({{ neqliyyat }})</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                <div class="single-services text-center mb-30">
+                    <a href="{% url 'techizat' %}">
+                        <div class="services-ion">
+                            <span class="flaticon-high-tech"></span>
+                        </div>
+                    </a>
+                    <div class="services-cap">
+                       <h5><a href="{% url 'techizat' %}">Təchizat</a></h5>
+                        <span>({{ techizat }})</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                <div class="single-services text-center mb-30">
+                    <a href="{% url 'marketinq' %}">
+                        <div class="services-ion">
+                            <span class="flaticon-high-tech"></span>
+                        </div>
+                    </a>
+                    <div class="services-cap">
+                       <h5><a href="{% url 'marketinq' %}">Marketinq</a></h5>
+                        <span>({{ marketinq }})</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- More Btn -->
+        <!-- Section Button -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="browse-btn2 text-center mt-50">
+                    <a href="job_listing.html" class="border-btn2">Browse All Sectors</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
