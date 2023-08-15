@@ -10,4 +10,17 @@
     width: 500px !important;
 }
 
+.job-tittle h4{
+    
+    max-width:530px;
+    word-wrap:break-word;
 }
+
+
+.company-img img{
+
+    width: 130px;
+}
+
+}
+

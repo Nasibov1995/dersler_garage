@@ -181,7 +181,7 @@ def add_job(request):
     sayt = soup.find_all('div',class_ = "job-card") 
 
     for i in sayt:
-        qisa_mezmun = ''
+        
         link = i.find('a',class_ = 'job-card__title',href=True)
         link = link["href"]
         data = requests.get(link)
