@@ -44,6 +44,8 @@ urlpatterns = [
     
     path('post_job/',views.post_job, name="post_job"),
     path('post_job_it/',views.post_job_it, name="post_job_it"),
+    
+    path('search_results/',views.search_articles, name="search_results"),
 
 
 

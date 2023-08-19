@@ -46,13 +46,18 @@
                                 <h4>Required Knowledge, Skills, and Abilities</h4>
                             </div>
                            <ul>
+                            {% if x.text1 and x.text2 and x.text3 and x.text4 and x.text5 and x.text6 and x.text7 != Null %} 
 
                                <li>{{ x.text1 }}</li>
                                <li>{{ x.text2 }}</li>
                                <li>{{ x.text3 }}</li>
                                <li>{{ x.text4 }}</li>
                                <li>{{ x.text5 }}</li>
-                            
+                               <li>{{ x.text6 }}</li>              
+                               <li>{{ x.text7 }}</li>
+
+                            {% endif %}
+
                                
                            </ul>
                         </div>
@@ -68,6 +73,8 @@
                                <li>{{ x.text_3 }}</li>
                                <li>{{ x.text_4 }}</li>
                                <li>{{ x.text_5 }}</li>
+                               <li>{{ x.text_6 }}</li>
+                               <li>{{ x.text_7 }}</li>
 
                            </ul>
                         </div>

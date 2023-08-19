@@ -49,12 +49,17 @@ class IT(models.Model):
     text2 = models.TextField(max_length=500,null=True)  
     text3 = models.TextField(max_length=500,null=True)  
     text4 = models.TextField(max_length=500,null=True)  
-    text5 = models.TextField(max_length=500,null=True) 
+    text5 = models.TextField(max_length=500,null=True)
+    text6 = models.TextField(max_length=500,null=True) 
+    text7 = models.TextField(max_length=500,null=True) 
+
     text_1 = models.TextField(max_length=500,null=True) 
     text_2 = models.TextField(max_length=500,null=True)  
     text_3 = models.TextField(max_length=500,null=True)  
     text_4 = models.TextField(max_length=500,null=True)  
     text_5 = models.TextField(max_length=500,null=True)  
+    text_6 = models.TextField(max_length=500,null=True)  
+    text_7 = models.TextField(max_length=500,null=True)  
 
     staj = models.CharField(max_length=100)
     yash = models.CharField(max_length=100)
@@ -299,3 +304,4 @@ class Marketinq(models.Model):
         return self.sirket
     def get_absolute_url(self):
         return f'/'
+    

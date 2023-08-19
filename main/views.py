@@ -11,6 +11,17 @@ from django.db.models import Q
 from django.core.mail import send_mail
 from bs4 import BeautifulSoup
 import requests
+from django.contrib.postgres.search import SearchVector
+
+def search_articles(request):
+    query = request.GET.get('q')
+    if query:
+        articles = Elan.objects.annotate(search=SearchVector('basliq')).filter(search=query)
+    else:
+        articles = Elan.objects.all()
+
+    return render(request, 'main/search_results.html', {'articles': articles, 'query': query})
+
 
 def post_job(request):
     return render(request, 'main/post_job.html')
@@ -188,6 +199,7 @@ def add_job(request):
         soup = BeautifulSoup(data.content,'html.parser')
         
         title = soup.find("h1",class_ = "top-banner__title").text
+        title = title.replace('vakansiya','')
         
         email = soup.find("span",id = "post_email").text
         # email.replace()
@@ -292,7 +304,7 @@ def add_it(request):
         soup = BeautifulSoup(data.content,'html.parser')
         
         title = soup.find("h1",class_ = "top-banner__title").text
-        
+        title = title.replace('vakansiya','')
         email = soup.find("span",id = "post_email").text
         # email.replace()
         # if '@' in email.text:
@@ -338,12 +350,16 @@ def add_it(request):
             text3 = soup.find("div",class_ = "post__content").find_all('ul')[0].find_all('li')[2]
             text4 = soup.find("div",class_ = "post__content").find_all('ul')[0].find_all('li')[3]
             text5 = soup.find("div",class_ = "post__content").find_all('ul')[0].find_all('li')[4]
-            
+            text6 = soup.find("div",class_ = "post__content").find_all('ul')[0].find_all('li')[5]
+            text7 = soup.find("div",class_ = "post__content").find_all('ul')[0].find_all('li')[6]
+
             text_1 = soup.find("div",class_ = "post__content").find_all('ul')[1].find_all('li')[0]
             text_2 = soup.find("div",class_ = "post__content").find_all('ul')[1].find_all('li')[1]
             text_3 = soup.find("div",class_ = "post__content").find_all('ul')[1].find_all('li')[2]
             text_4 = soup.find("div",class_ = "post__content").find_all('ul')[1].find_all('li')[3]
             text_5 = soup.find("div",class_ = "post__content").find_all('ul')[1].find_all('li')[4]
+            text_6 = soup.find("div",class_ = "post__content").find_all('ul')[1].find_all('li')[5]
+            text_7 = soup.find("div",class_ = "post__content").find_all('ul')[1].find_all('li')[6]
 
             
             text1 = text1.text
@@ -351,13 +367,17 @@ def add_it(request):
             text3 = text3.text
             text4 = text4.text
             text5 = text5.text
-            
+            text6 = text6.text
+            text7 = text7.text
+
              
             text_1 = text_1.text
             text_2 = text_2.text
             text_3 = text_3.text
             text_4 = text_4.text
             text_5 = text_5.text
+            text_6 = text_6.text
+            text_7 = text_7.text
 
         except : IndexError 
             
@@ -376,7 +396,7 @@ def add_it(request):
                 add = IT(apply_link = apply,yash = age,staj = staj,tehsil=tehsil,rejm=rejm,muqavile=muqavile,
                         basliq = title,mezmun = qisa_mezmun ,sirket=sirket, seher=city,start =start_date,
                         end = end_date,maas=maas,text1 = text1,text2 = text2,text3 = text3,email=email,text4 = text4,
-                        text5 = text5,text_1 = text_1,text_2 = text_2,text_3 = text_3,text_4 = text_4,text_5 = text_5)   
+                        text5 = text5,text_1 = text_1,text_2 = text_2,text_3 = text_3,text_4 = text_4,text_5 = text_5,text6=text6,text7=text7,text_6 = text_6,text_7=text_7)   
                 add.save()
             except:TypeError
     return HttpResponseRedirect(reverse('index'))
@@ -395,7 +415,7 @@ def add_senaye(request):
         soup = BeautifulSoup(data.content,'html.parser')
         
         title = soup.find("h1",class_ = "top-banner__title").text
-        
+        title = title.replace('vakansiya','')
         email = soup.find("span",id = "post_email").text
         # email.replace()
         # if '@' in email.text:
@@ -498,7 +518,7 @@ def add_tibb(request):
         soup = BeautifulSoup(data.content,'html.parser')
         
         title = soup.find("h1",class_ = "top-banner__title").text
-        
+        title = title.replace('vakansiya','')
         email = soup.find("span",id = "post_email").text
         # email.replace()
         # if '@' in email.text:
@@ -601,7 +621,7 @@ def add_security(request):
         soup = BeautifulSoup(data.content,'html.parser')
         
         title = soup.find("h1",class_ = "top-banner__title").text
-        
+        title = title.replace('vakansiya','')
         email = soup.find("span",id = "post_email").text
         # email.replace()
         # if '@' in email.text:
@@ -704,7 +724,7 @@ def add_satish(request):
         soup = BeautifulSoup(data.content,'html.parser')
         
         title = soup.find("h1",class_ = "top-banner__title").text
-        
+        title = title.replace('vakansiya','')
         email = soup.find("span",id = "post_email").text
         # email.replace()
         # if '@' in email.text:
@@ -808,7 +828,7 @@ def add_neqliyyat(request):
         soup = BeautifulSoup(data.content,'html.parser')
         
         title = soup.find("h1",class_ = "top-banner__title").text
-        
+        title = title.replace('vakansiya','')
         email = soup.find("span",id = "post_email").text
         # email.replace()
         # if '@' in email.text:
@@ -911,7 +931,7 @@ def add_techizat(request):
         soup = BeautifulSoup(data.content,'html.parser')
         
         title = soup.find("h1",class_ = "top-banner__title").text
-        
+        title = title.replace('vakansiya','')
         email = soup.find("span",id = "post_email").text
         # email.replace()
         # if '@' in email.text:
@@ -1015,7 +1035,7 @@ def add_marketinq(request):
         soup = BeautifulSoup(data.content,'html.parser')
         
         title = soup.find("h1",class_ = "top-banner__title").text
-        
+        title = title.replace('vakansiya','')
         email = soup.find("span",id = "post_email").text
         # email.replace()
         # if '@' in email.text:
